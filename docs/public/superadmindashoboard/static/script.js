@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function redirectToLogin() {
-        window.location.href = '/login.html';
+        window.location.href = '../login-admin.html';
     }
     
     function debounce(func, timeout = 300) {

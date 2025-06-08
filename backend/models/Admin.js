@@ -19,7 +19,15 @@ const AdminSchema = new mongoose.Schema({
         canManageTrips: { type: Boolean, default: true },
         canManageUsers: { type: Boolean, default: true },
         canManageBookings: { type: Boolean, default: true },
-        canManageContent: { type: Boolean, default: true }
+        canManageContent: { type: Boolean, default: true },
+        canManageAdmins: { type: Boolean, default: false }        
+    },
+        password : {
+        type : String,
+        trim : true,
+        minlength : [8,'You should create a password of 8 characters or more'],
+        select : false,
+        required : [true,'Password is required']
     }
 }, { timestamps: true });
 
