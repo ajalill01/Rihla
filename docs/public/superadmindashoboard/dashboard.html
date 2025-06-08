@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Management</h1>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="logout-btn" class="btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="controls">
+                <button id="add-admin-btn" class="btn primary">
+                    <i class="fas fa-plus"></i> Add New Admin
+                </button>
+                
+                <div class="search-sort">
+                    <div class="search-box">
+                        <input type="text" id="admin-search" placeholder="Search by email...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="sort-dropdown">
+                        <select id="sort-admins">
+                            <option value="email:asc">Email (A-Z)</option>
+                            <option value="email:desc">Email (Z-A)</option>
+                            <option value="createdAt:asc">Oldest First</option>
+                            <option value="createdAt:desc">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="admin-form hidden" id="admin-form">
+                <h2>Create New Admin</h2>
+                <form id="new-admin-form">
+                    <div class="form-group">
+                        <label for="admin-email">Email</label>
+                        <input type="email" id="admin-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" required>
+                    </div>
+                    
+                    <fieldset class="permissions">
+                        <legend>Permissions</legend>
+                        <div class="permission-option">
+                            <input type="checkbox" id="can-manage-trips">
+                            <label for="can-manage-trips">Manage Trips</label>
+                        </div>
+                        <div class="permission-option">
+                            <input type="checkbox" id="can-manage-users">
+                            <label for="can-manage-users">Manage Users</label>
+                        </div>
+                        <div class="permission-option">
+                            <input type="checkbox" id="can-manage-bookings">
+                            <label for="can-manage-bookings">Manage Bookings</label>
+                        </div>
+                        <div class="permission-option">
+                            <input type="checkbox" id="can-manage-content">
+                            <label for="can-manage-content">Manage Content</label>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancel-admin" class="btn">Cancel</button>
+                        <button type="submit" class="btn primary">Create Admin</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="admin-list">
+                <div class="list-header">
+                    <span class="email-col">Email</span>
+                    <span class="date-col">Created At</span>
+                    <span class="actions-col">Actions</span>
+                </div>
+                
+                <div id="admins-container">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Loading admins...
+                    </div>
+                </div>
+                
+                <div class="pagination" id="pagination">
+                </div>
+            </section>
+        </main>
+    </div>
+
+<template id="admin-actions-template">
+    <div class="dropdown">
+        <button class="dropdown-toggle" data-admin-id="${admin._id}">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="dropdown-menu">
+            <button class="dropdown-item edit-permissions">
+                <i class="fas fa-user-cog"></i> Edit Permissions
+            </button>
+            <button class="dropdown-item delete-admin">
+                <i class="fas fa-trash"></i> Delete
+            </button>
+        </div>
+    </div>
+</template>
+
+    <template id="permissions-modal-template">
+        <div class="modal-overlay">
+            <div class="modal">
+                <h2>Edit Permissions</h2>
+                <form class="permissions-form">
+                    <div class="permission-option">
+                        <input type="checkbox" id="edit-can-manage-trips">
+                        <label for="edit-can-manage-trips">Manage Trips</label>
+                    </div>
+                    <div class="permission-option">
+                        <input type="checkbox" id="edit-can-manage-users">
+                        <label for="edit-can-manage-users">Manage Users</label>
+                    </div>
+                    <div class="permission-option">
+                        <input type="checkbox" id="edit-can-manage-bookings">
+                        <label for="edit-can-manage-bookings">Manage Bookings</label>
+                    </div>
+                    <div class="permission-option">
+                        <input type="checkbox" id="edit-can-manage-content">
+                        <label for="edit-can-manage-content">Manage Content</label>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="button" class="btn cancel-permissions">Cancel</button>
+                        <button type="submit" class="btn primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
