@@ -9,6 +9,7 @@ const connectToDb = require('./databse/db')
 
 const authRoutes = require('./routes/auth-routes')
 const superAdminRoutes = require('./routes/superAdmin-routes')
+const tripRoutes = require('./routes/trip-routes')
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use(express.json())
 
 app.use('/api/auth/',authRoutes);
 app.use('/api/superAdmin',superAdminRoutes)
+app.use('/api/trip',tripRoutes)
 
 const PORT = process.env.PORT
 

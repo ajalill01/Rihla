@@ -65,7 +65,8 @@ const TripSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function(date) {
-                return date > new Date();
+                const dateObj = date instanceof Date ? date : new Date(date);
+                return dateObj > new Date();
             },
             message: 'Start date must be in the future'
         }
@@ -74,18 +75,18 @@ const TripSchema = new mongoose.Schema({
         max: {
             type: Number,
             required: true,
-            min: [1, 'Maximum group size must be at least 1']
+            min: [1, 'Maximum group size must be at least 1'], // Changed from 15 to 1
+            // validate: {
+            //     validator: function(value) {
+            //         return value >= this.parent().min;
+            //     },
+            //     message: 'Max group size must be greater than or equal to min size'
+            // }
         },
         min: {
             type: Number,
             default: 1,
             min: [1, 'Minimum group size must be at least 1']
-        },
-        validate: {
-            validator: function(value) {
-                return value.max >= value.min;
-            },
-            message: 'Max group size must be greater than or equal to min size'
         }
     },
     accommodation: {
@@ -139,17 +140,9 @@ const TripSchema = new mongoose.Schema({
             required: true,
             min: [0, 'Nights cannot be negative']
         }
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
     }
 }, {
-    timestamps: true, 
+    timestamps: true
 });
 
 TripSchema.index({ destination: 1, isActive: 1 });
@@ -173,13 +166,11 @@ TripSchema.pre('save', function(next) {
     if (this.startDates && this.startDates.length) {
         const now = new Date();
         this.startDates = this.startDates.filter(date => date > now);
-        
         if (this.startDates.length === 0) {
             return next(new Error('At least one valid future start date is required'));
         }
     }
     next();
 });
-
 
 module.exports = mongoose.model('Trip', TripSchema);
