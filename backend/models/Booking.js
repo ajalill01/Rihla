@@ -46,7 +46,17 @@ const BookingSchema = new mongoose.Schema({
         type: String,
         enum: ['stripe', 'cash', 'mixed'],
         default: 'stripe'
-    }
+    },
+    notes: {
+  type: String,
+  select: false
+},
+cancellationReason: {
+  type: String,
+  required: function() {
+    return this.status === 'cancelled';
+  }
+}
 }, { timestamps: true });
 
 BookingSchema.index({ user: 1, status: 1 });
