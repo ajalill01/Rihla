@@ -532,7 +532,7 @@ main .sec-imgs{
     padding-inline: 48px;
     height : 500px;
     display : grid;
-    grid-template-columns: 350px 300px 100px;
+    grid-template-columns: 350px 100px 100px;
     position: relative;
 }
 
@@ -579,9 +579,10 @@ main .sec-imgs{
 
 .texts{
     position: absolute;
-    right: 50px;
+    right: 200px;
     width: 400px;
 }
+
 
 .texts h1{
     font-size: 1.5em;
@@ -651,6 +652,12 @@ main .sec-imgs{
     display : none;
 }
 
+@media (width<1400px){
+    .texts{
+    right: 140px;
+
+}
+}
 @media (width<1200px){
 
 .beach-d{
@@ -688,7 +695,9 @@ main .sec-imgs{
     font-size: 0.6em;
         width: 100%;
 }
-
+    .texts{
+    right: 50px !important;
+}
 }
 
 @media (width<1000px){
