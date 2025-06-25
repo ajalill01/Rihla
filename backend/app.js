@@ -11,6 +11,7 @@ const authRoutes = require('./routes/auth-routes')
 const superAdminRoutes = require('./routes/superAdmin-routes')
 const tripRoutes = require('./routes/trip-routes')
 const userRoutes = require('./routes/user-routes')
+const bookingRoutes = require('./routes/booking-routes')
 
 const app = express()
 
@@ -21,6 +22,7 @@ app.use('/api/auth/',authRoutes);
 app.use('/api/superAdmin',superAdminRoutes)
 app.use('/api/trip',tripRoutes)
 app.use('/api/users',userRoutes)
+app.use('/api/booking',bookingRoutes)
 
 const PORT = process.env.PORT
 
