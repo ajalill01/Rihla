@@ -6,6 +6,7 @@
     --text-dark : #333;
     --text-light : #767268;
     --white  : #fff;
+    --gray : #f4f4f4;
     --header-font : "Bebas Neue",sans-serif;
       --margin-s:16px;
   --margin-m:16px;
@@ -36,6 +37,7 @@ a{
 
 body{
     font-family: "Poppins",sans-serif;
+    background-color: var(--gray);
 }
 
 nav{
@@ -230,14 +232,14 @@ nav{
 }
 
 footer{
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     color: var(--white);
     width : 100%;
     overflow-x: hidden;
 }
 
 .gradient-2{
-    background: linear-gradient(to bottom, var(--white) 20%, var(--color-primary) 80%);
+    background: linear-gradient(to bottom, var(--gray) 20%, var(--color-primary-dark) 80%);
     height: 256px;
     width: 100%;
 }
@@ -247,7 +249,7 @@ footer{
   justify-content: center;
   gap: 256px;
   padding: 32px 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
 }
 
 .media a {
@@ -398,7 +400,7 @@ hr{
 }
 
 .auth-btn.active {
-  color: var(--white);
+  color: var(--gray);
 }
 
 .auth-toggle::after {
@@ -473,7 +475,7 @@ hr{
   justify-content: center;
   gap: 126px;
   padding: 16px 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
 }
 
 .media a {
@@ -489,7 +491,7 @@ hr{
   justify-content: center;
   gap: 64px;
   padding: 16px 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
 }
 
 .media a {
@@ -517,4 +519,490 @@ hr{
     font-weight: 600;
     color: var(--color-primary);
 }
+}
+
+main{
+    margin-top: 6rem;
+}
+
+main .sec-imgs{
+    width : 100%;
+    padding-inline: 48px;
+    height : 500px;
+    display : grid;
+    grid-template-columns: 350px 300px 100px;
+    position: relative;
+}
+
+.img-cover{
+    height : 500px;
+    width : 350px;
+    border-radius : 20px;
+}
+
+.beach-d{
+    /* background-color: var(--white); */
+    background-color: var(--gray);
+    padding :8px 10px;
+    width : 250px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    position: absolute;
+    left: 300px;
+    top: 160px;
+    border-radius: 20px;
+    padding-bottom: 12px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.beach-d img{
+    height : 200px;
+    width : 100%;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.beach-d .beach-h{
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 100%;
+}
+.beach-d .beach-p{
+    font-size: 0.7em;
+        width: 100%;
+}
+
+.texts{
+    position: absolute;
+    right: 50px;
+    width: 400px;
+}
+
+.texts h1{
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.texts p{
+    font-size: 1em;
+    font-weight: 300;
+        margin-bottom: 5em;
+}
+
+.sec-p{
+    display: grid;
+    grid-template-columns: 100px 200px;
+    height: 400px;
+    position: relative;
+    top: 100px;
+    text-align: start;
+    gap: 40px;
+}
+.sec-p .p{
+        position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pp{
+    font-size: 3em;
+    font-weight: 500;
+    position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pt{
+    font-size: 0.8em;
+        font-weight: 400;
+}
+
+.sec-p .img-1{
+    position: relative;
+    bottom: 0%;
+    height: 190px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px 10px;
+    
+}
+
+.sec-p .img-1 img{
+    height: 180px;
+    width : 80%;
+        border-radius: 20px;
+        margin-bottom: 0.5em;
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.sec-p .img-1 .pt{
+    font-size: 0.8em;
+        font-weight: 400;
+                  text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (width<1200px){
+
+.beach-d{
+    background-color: var(--gray);
+    padding :8px 10px;
+    width : 200px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    position: absolute;
+    left: 300px;
+    top: 160px;
+    border-radius: 20px;
+    padding-bottom: 12px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.beach-d img{
+    height : 180px;
+    width : 100%;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.beach-d .beach-h{
+    font-size: 1em;
+    font-weight: 500;
+    width: 100%;
+}
+.beach-d .beach-p{
+    font-size: 0.6em;
+        width: 100%;
+}
+
+}
+
+@media (width<1000px){
+main .sec-imgs{
+    display : grid;
+    grid-template-columns: 250px 300px 100px 400px;
+    position: relative;
+}
+
+.img-cover{
+    height : 500px;
+    width : 250px;
+    border-radius : 40px;
+}
+
+.beach-d{
+    padding :8px 10px;
+    width : 160px;
+    position: absolute;
+    left: 250px;
+    top: 160px;
+    border-radius: 20px;
+    padding-bottom: 12px;
+}
+
+
+
+.beach-d img{
+    height : 140px;
+    width : 100%;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.beach-d .beach-h{
+    font-size: 1em;
+    font-weight: 500;
+    width: 100%;
+}
+.beach-d .beach-p{
+    font-size: 0.6em;
+        width: 100%;
+}
+
+
+.texts{
+    position: absolute;
+    right: 50px;
+    width: 400px;
+}
+
+.texts h1{
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.texts p{
+    font-size: 0.8em;
+    font-weight: 300;
+        margin-bottom: 5em;
+}
+
+.sec-p{
+    display: grid;
+    grid-template-columns: 100px 200px;
+    height: 400px;
+    top: 100px;
+    left: 40px;
+    width :80%;
+        padding-left: 40px;
+}
+.sec-p .p{
+        position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pp{
+    font-size: 2em;
+    font-weight: 500;
+    position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pt{
+    font-size: 0.7em;
+        font-weight: 400;
+}
+
+.sec-p .img-1{
+    position: relative;
+    bottom: 0%;
+    height: 170px;
+    border-radius: 20px;
+    padding: 8px 10px;
+}
+
+.sec-p .img-1 img{
+    height: 120px;
+    width : 60%;
+        border-radius: 20px;
+        margin-bottom: 0.5em;
+}
+
+.sec-p .img-1 .pt{
+    font-size: 0.6em;
+        font-weight: 400;
+}
+}
+
+@media (width<850px){
+
+    .texts{
+    position: absolute;
+    right: 50px;
+    width: 350px;
+}
+
+.texts h1{
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.texts p{
+    font-size: 0.8em;
+    font-weight: 300;
+        margin-bottom: 5em;
+}
+
+.sec-p{
+    display: grid;
+    grid-template-columns: 80px 150px;
+    height: 400px;
+    top: 100px;
+    left: 40px;
+    width :80%;
+}
+.sec-p .p{
+        position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pp{
+    font-size: 2em;
+    font-weight: 500;
+    position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pt{
+    font-size: 0.7em;
+        font-weight: 400;
+}
+
+.sec-p .img-1{
+    position: relative;
+    bottom: 0%;
+    height: 170px;
+    border-radius: 20px;
+    padding: 8px 10px;
+}
+
+.sec-p .img-1 img{
+    height: 160px;
+    width : 60%;
+        border-radius: 20px;
+        margin-bottom: 0.5em;
+}
+
+.sec-p .img-1 .pt{
+    font-size: 0.6em;
+        font-weight: 400;
+}
+    .sec-p{
+    left: 80px;
+}
+
+
+}
+
+@media (width<760px) {
+    .img-cover{
+    height : 500px;
+    width : 200px;
+    border-radius : 40px;
+}
+
+.beach-d{
+    padding :8px 10px;
+    width : 140px;
+    position: absolute;
+    left: 200px;
+    top: 160px;
+    border-radius: 20px;
+    padding-bottom: 12px;
+}
+
+
+
+.beach-d img{
+    height : 100px;
+    width : 100%;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.beach-d .beach-h{
+    font-size: 0.8em;
+    font-weight: 500;
+    width: 100%;
+}
+.beach-d .beach-p{
+    font-size: 0.5em;
+        width: 100%;
+}
+
+.texts{
+    position: absolute;
+    right: 50px;
+    width: 350px;
+}
+
+.texts h1{
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.texts p{
+    font-size: 0.8em;
+    font-weight: 300;
+        margin-bottom: 5em;
+}
+
+.sec-p{
+    display: grid;
+    grid-template-columns: 80px 150px;
+    height: 400px;
+    top: 100px;
+    left: 40px;
+    width :80%;
+}
+.sec-p .p{
+        position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pp{
+    font-size: 1.5em;
+    font-weight: 500;
+    position: relative;
+    bottom: 0%;
+}
+.sec-p .p .pt{
+    font-size: 0.5em;
+        font-weight: 400;
+}
+
+.sec-p .img-1{
+    position: relative;
+    bottom: 0%;
+    height: 170px;
+    border-radius: 20px;
+    padding: 8px 10px;
+}
+
+.sec-p .img-1 img{
+    height: 120px;
+    width : 60%;
+        border-radius: 20px;
+        margin-bottom: 0.5em;
+}
+
+.sec-p .img-1 .pt{
+    font-size: 0.6em;
+        font-weight: 400;
+}
+    .sec-p{
+    left: 80px;
+}
+
+
+}
+
+@media (width <700px) {
+
+.texts h1{
+    padding-left: 2em;
+}
+
+.texts p{
+    padding-left: 3em;
+}
+}
+
+@media (width<650px){
+        .texts{
+        width : 200px
+    }
+.texts h1{
+    font-size: 0.9em;
+    padding-left: 0;
+}
+
+.texts p{
+    font-size: 0.7em;
+        padding-left: 0;
+}
+    .texts p{
+        margin-bottom: 0em;
+    }
+    .sec-p{
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        left : 50px;
+        margin-top: 0%;
+        transform: translateY(-130px);
+    }
+
+    .sec-p .img-1 img{
+        width : 100px
+    }
 }
