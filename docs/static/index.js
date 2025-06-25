@@ -46,3 +46,17 @@ ScrollReveal().reveal(".header_image_card",{
     delay : 1400
 
 })
+
+const feedBtn = document.getElementById('feed-btn');
+const feedForm = document.getElementById('form-feed')
+const feedClose = document.getElementById('close-form')
+
+feedBtn.addEventListener('click',()=>{
+     feedForm.style.display = 'flex';
+     feedBtn.style.display = 'none';
+})
+
+feedClose.addEventListener('click',()=>{
+    feedForm.style.display = 'none';
+    feedBtn.style.display = 'flex';
+})
