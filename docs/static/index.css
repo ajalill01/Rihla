@@ -8,7 +8,7 @@
     --text-light : #767268;
     --white  : #fff;
     --gray : #f4f4f4;
-    --header-font : "Bebas Neue",sans-serif;
+    --header-font : "Arial",sans-serif;
       --margin-s:16px;
   --margin-m:16px;
   --margin-l:32px;
@@ -29,18 +29,23 @@
 img{
     display : flex;
     width : 50%;
+    user-select: none;
 }
 
 a{
-    text-decoration: none;
+    all: unset;
     transform: 0.3s;
+}
+
+a:hover{
+    cursor: pointer;    
 }
 
 button{
     all: unset;
 }
 body{
-    font-family: "Poppins",sans-serif;
+font-family: 'Poppins', sans-serif;
     background-color: var(--gray);
 }
 
@@ -237,96 +242,8 @@ nav{
     transition : 300ms ease-out
 }
 
-footer{
-    background-color: var(--color-primary-dark);
-    color: var(--white);
-    width : 100%;
-    overflow-x: hidden;
-}
-
-.gradient-2{
-    background: linear-gradient(to bottom, var(--gray) 20%, var(--color-primary-dark) 80%);
-    height: 50px;
-    width: 100%;
-}
-
-.media {
-  display: flex;
-  justify-content: center;
-  gap: 256px;
-  padding: 32px 0;
-  background-color: var(--color-primary-dark);
-}
-
-.media a {
-  font-size: 20px;
-  color: var(--white);
-  transition: transform 0.6s ease-in-out, color 0.4s ease;
-}
 
 
-.media a:nth-child(1):hover i {
-  transform: scale(1.8);
-}
-
-.media a:nth-child(2):hover i {
-  transform: scale(1.8);
-}
-
-.media a:nth-child(3):hover i {
-  transform: scale(1.8);
-}
-
-.media a:nth-child(4):hover i {
-  transform: scale(1.8);
-}
-
-
-
-.media a {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: popIn 0.5s ease forwards;
-}
-
-.media a:nth-child(1) { animation-delay: 0s; }
-.media a:nth-child(2) { animation-delay: 0.1s; }
-.media a:nth-child(3) { animation-delay: 0.2s; }
-.media a:nth-child(4) { animation-delay: 0.3s; }
-
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-
-hr:last-child{
-    margin-bottom: 0%;
-}
-
-a{
-    list-style: none;
-    text-decoration: none;
-}
-.privacy{
-    display: flex;
-  align-items: center;
-  justify-content: center;
-    width: 100;
-    color: var(--white);
-    padding: var(--padding-btn-t) 0%;
-    padding-bottom: var(--margin-l);
-}
-.privacy:hover{
-    text-decoration: underline;
-
-}
-
-hr{
-    margin-bottom: var(--margin-xl);
-}
 @media (width > 700px) {
  
     nav{
@@ -1324,8 +1241,324 @@ font-size: 1em;
             
 .form-feed{
     width : 60%;
+    height : 300px;
 }
     
     }
 
         
+
+footer{
+    display: flex;
+    flex-direction: column;
+    width : 85%;
+    margin : auto;
+
+}
+
+footer .try {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width : 100%;
+    flex-direction: column;
+    padding : 32px 16px;
+    margin-top: 2em;
+}
+
+footer .try h1{
+    margin-bottom: 1em;
+}
+
+footer .try p{
+    margin-bottom: 2em;
+
+}
+
+footer .try button{
+        background-color: var(--color-primary-light);
+        color: var(--white);
+        padding : 16px 32px;
+        border-radius: 32px;
+        margin : auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        margin-bottom: 1em;
+        gap : 8px;
+}
+hr{
+    margin-bottom : 1em;
+    opacity : 0.5;
+}
+
+footer .try button:hover{
+        cursor : pointer;
+        background-color: var(--color-primary-dark);
+        transition : 300ms ease-in-out;
+    }
+
+footer .try button:active{
+                background-color: var(--color-primary-light);
+    }
+
+    footer .try img{
+        height : 150px;
+        width : 200px;
+            margin-bottom: 0;
+    }
+
+
+    .links-to-things{
+        display : flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items : center;
+        padding : 32px 8px;
+        gap: 160px;
+        padding-bottom : 0px;
+    }
+
+footer .links-to-things .cnt{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align : start;
+    height : 200px;
+}
+
+footer .links-to-things .cnt h3{
+    margin-bottom : 0.8em;
+    font-size: 1.2em;
+}
+
+
+footer .links-to-things .cnt div{
+    margin-bottom : 0.6em;
+    font-size: 0.9em !important;
+}
+
+footer .links-to-things .cnt div a:hover{
+    cursor : pointer;
+    color: var(--color-primary);
+}
+
+hr:last-child{
+    margin-top: 0em;
+}
+
+footer .terms{
+    display : flex;
+    text-align : end;
+    width : 100%;
+    flex-direction : row;
+    gap :32px;
+}
+
+footer .terms a{
+    font-size : 0.8em;
+    opacity : 0.5;
+    padding-block: 32px;
+}
+
+footer .terms a:hover{
+    text-decoration: underline;
+}
+
+@media ( width<950px){
+    footer .links-to-things .cnt div a{
+    font-size: 1em !important;
+}
+}
+
+@media (width<830px){
+    footer .links-to-things .cnt h3{
+    margin-bottom : 0.8em;
+    font-size: 1em;
+}
+
+
+footer .links-to-things .cnt div{
+    margin-bottom : 0.6em;
+    font-size: 0.7em !important;
+}
+
+footer .try h1{
+    font-size : 1.2em;
+}
+
+footer .try p{
+    font-size : 0.8em;
+
+}
+
+footer .try button{
+        padding : 16px 32px;
+        border-radius: 32px;
+        font-size: 0.8em;
+}
+
+    footer .try img{
+        height : 100px;
+        width : 150px;
+    }
+
+}
+
+@media (width<700px){
+    .links-to-things{
+        display : grid;
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 2;
+        gap : 10px;
+    }
+    footer .links-to-things .cnt{
+        height : 120px;
+    }
+}
+
+@media (width<470px){
+    .links-to-things{
+        grid-template-columns: 150px 150px;
+        gap : 32px;
+    }
+}
+
+.div-ex{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : start;
+    width : 100%;
+    padding : 32px 64px;
+    margin-bottom : 2em;
+    text-align: start;
+}
+
+.div-ex h1{
+        text-align: start;
+        margin-bottom: 2.5em;
+        color : var(--color-primary-dark);
+}
+
+.j{
+    display : flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.div-ex .j h1{
+    color : var(--text-dark);
+            margin-bottom: 3em;
+}
+.j img{
+    height : 400px;
+    width : 350px;
+      border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.j .things{
+    width : 60%;
+    position : relative;
+
+}
+
+.icons{
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    padding-right: 80px;
+    width : 100%;
+    margin-bottom: 2em;
+}
+
+.icons .icon{
+    display : flex;
+    flex-direction: row;
+    font-size: 1em;
+    background-color: var(--color-primary-dark);
+    color : var(--white);
+    padding : 8px 16px;
+    border-radius: 16px;
+    gap : 12px;
+}
+
+.things .pp-things{
+    opacity : 0.5;
+    margin-bottom : 3em;
+}
+
+.things button{
+            background-color: var(--color-primary-dark);
+        color: var(--white);
+        padding : 16px 24px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1em;
+        gap : 8px;
+        position : absolute;
+        bottom :40px;
+        left : 10px;
+}
+
+.things button:hover{
+        cursor : pointer;
+        background-color: var(--color-primary-dark);
+        transition : 300ms ease-in-out;
+    }
+
+.things button:active{
+                background-color: var(--color-primary-light);
+    }
+
+.why{
+    display : flex;
+    flex-direction : column;
+    align-items: start;
+    justify-content: start;
+    text-align : start;
+    padding : 62px 128px;
+}
+
+.why h1{
+    margin-bottom : 2em;
+    font-weight : 500;
+}
+
+h1 , h3{
+    --header-font : "Arial",sans-serif !important;
+}
+
+.why .coose{
+    display : flex;
+    flex-direction : row;
+    justify-content : space-between;
+    width : 100%;
+        height : 300px;
+}
+
+.why .coose .chose{
+    display : flex;
+    flex-direction : column;
+    width : 128px;
+    height : 300px;
+}
+
+.why .coose .chose i{
+    font-size : 2em;
+    color : var(--color-primary);
+    margin-bottom: 1em;
+}
+
+.why .coose .chose h3{
+    font-size : 1em;
+    margin-bottom : 1em;
+}
+
+.why .coose .chose p{
+    font-size : 0.9em;
+}
